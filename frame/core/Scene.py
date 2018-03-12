@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 import pygame
-import sys
 
 from .Renderer import Renderer
 from .EventHandler import EventHandler
+from .Timer import Timer
 
 
 class Scene:
@@ -19,7 +19,6 @@ class Scene:
         self.scene_over = False
 
     def start(self):
-        #TODO setup timer
         """
         This method starts the game objects, timer and event manager
         """
@@ -30,6 +29,7 @@ class Scene:
             game_object.start()
 
         EventHandler.handle_events(pygame.event.get())
+        Timer.register_frame()
         Renderer.render_background(self.bg_material)
 
     def update(self):
@@ -43,11 +43,15 @@ class Scene:
 
         self.game_objects_list.sort(key=lambda gm_obj: gm_obj.transform.layer)
 
+        EventHandler.handle_events(pygame.event.get())
+
         for game_object in self.game_objects_list:
             game_object.update()
             game_object.draw()
 
-        EventHandler.handle_events(pygame.event.get())
+        Timer.register_frame()
+
+        pygame.display.flip()
 
     def loop(self):
         """
@@ -56,7 +60,6 @@ class Scene:
 
         while not self.scene_over:
             self.update()
-            pygame.display.flip()
 
             if EventHandler.quit:
                 self.exit()

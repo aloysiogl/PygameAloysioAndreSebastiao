@@ -15,7 +15,10 @@ class CircularMesh(Mesh):
         """
         self.radius = radius
 
-    # TODO comment
     def render(self, transform):
+        """
+        This method uses simple circle render functionality
+        :param transform:
+        """
         Renderer.render_simple_circle(self, transform)
 

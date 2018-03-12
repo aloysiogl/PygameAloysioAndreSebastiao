@@ -3,6 +3,7 @@
 import pygame
 from .Renderer import Renderer
 from .Scene import Scene
+from .SceneManager import SceneManager
 from ..components import Material
 from .Representations import Color
 from structure.Test import Test
@@ -27,11 +28,10 @@ class Core:
         Renderer.set_display(cls.game_display)
 
         # Test code TODO
-        scene = Scene([], Material(Color.red))
+        SceneManager.add_scene(Scene([], Material(Color.red)))
         obj = Test()
-        scene.add_game_object(obj)
-        scene.start()
-        scene.loop()
+        SceneManager.get_current_scene().add_game_object(obj)
+        SceneManager.run_current_scene()
 
     @classmethod
     def quit(cls):

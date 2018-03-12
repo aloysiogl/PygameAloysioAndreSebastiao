@@ -5,6 +5,7 @@ from .Renderer import Renderer
 from .Scene import Scene
 from ..components import Material
 from .Representations import Color
+from structure.Test import Test
 
 
 class Core:
@@ -27,6 +28,8 @@ class Core:
 
         # Test code TODO
         scene = Scene([], Material(Color.red))
+        obj = Test()
+        scene.add_game_object(obj)
         scene.start()
         scene.loop()
 

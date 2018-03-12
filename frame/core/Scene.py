@@ -39,11 +39,13 @@ class Scene:
 
         # Running all updates
 
+        Renderer.render_background(self.bg_material)
+
         for game_object in self.game_objects_list:
             game_object.update()
+            game_object.draw()
 
         EventHandler.handle_events(pygame.event.get())
-        Renderer.render_background(self.bg_material)
 
     def loop(self):
         """
@@ -60,6 +62,14 @@ class Scene:
                 sys.exit()
 
         self.exit()
+
+    def add_game_object(self, game_object):
+        """
+        This method add a game object to the game object list
+        :param game_object:
+        """
+
+        self.game_objects_list.append(game_object)
 
     def end(self):
         """

@@ -19,7 +19,7 @@ class Scene:
         self.scene_over = False
 
     def start(self):
-        #TODO setup timer and event manager
+        #TODO setup timer
         """
         This method starts the game objects, timer and event manager
         """
@@ -39,11 +39,15 @@ class Scene:
 
         # Running all updates
 
+        Renderer.render_background(self.bg_material)
+
+        self.game_objects_list.sort(key=lambda gm_obj: gm_obj.transform.layer)
+
         for game_object in self.game_objects_list:
             game_object.update()
+            game_object.draw()
 
         EventHandler.handle_events(pygame.event.get())
-        Renderer.render_background(self.bg_material)
 
     def loop(self):
         """
@@ -54,12 +58,19 @@ class Scene:
             self.update()
             pygame.display.flip()
 
-            #TODO remove this
             if EventHandler.quit:
-                pygame.quit()
-                sys.exit()
+                self.exit()
+                return "exit_game"
 
         self.exit()
+
+    def add_game_object(self, game_object):
+        """
+        This method add a game object to the game object list
+        :param game_object:
+        """
+
+        self.game_objects_list.append(game_object)
 
     def end(self):
         """

@@ -14,7 +14,7 @@ class Mesh:
         self.material = material
 
     @abc.abstractmethod
-    def render(self):
+    def render(self, transform):
         """
         This method is responsible for rendering a mesh
         """

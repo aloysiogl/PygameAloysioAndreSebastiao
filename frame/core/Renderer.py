@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 
-
 class Renderer:
     __game_display = 0
 

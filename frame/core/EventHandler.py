@@ -5,6 +5,11 @@ import pygame
 
 class EventHandler:
     quit = False
+    key_up = False
+    key_down = False
+    key_left = False
+    key_right = False
+
 
     @classmethod
     def handle_events(cls, events_list):
@@ -18,6 +23,40 @@ class EventHandler:
 
             if current_event == pygame.QUIT:
                 cls.__quit()
+            elif current_event == pygame.KEYDOWN:
+                cls.__keydown(event)
+            elif current_event == pygame.KEYUP:
+                cls.__keyup(event)
+
+    @classmethod
+    def __keydown(cls, current_event):
+        """
+        Updates keys on keydown
+        """
+
+        if current_event.key == pygame.K_UP:
+            cls.key_up = True
+        if current_event.key == pygame.K_DOWN:
+            cls.key_down = True
+        if current_event.key == pygame.K_LEFT:
+            cls.key_left = True
+        if current_event.key == pygame.K_RIGHT:
+            cls.key_right = True
+
+    @classmethod
+    def __keyup(cls, current_event):
+        """
+        Updates key on keyup
+        """
+
+        if current_event.key == pygame.K_UP:
+            cls.key_up = False
+        if current_event.key == pygame.K_DOWN:
+            cls.key_down = False
+        if current_event.key == pygame.K_LEFT:
+            cls.key_left = False
+        if current_event.key == pygame.K_RIGHT:
+            cls.key_right = False
 
     @classmethod
     def __quit(cls):

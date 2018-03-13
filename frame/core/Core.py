@@ -6,13 +6,11 @@ from .Scene import Scene
 from .SceneManager import SceneManager
 from ..components import Material
 from .Representations import Color
+from .Representations import Screen
 from structure.Test import Test
 
 
 class Core:
-    width = 640
-    heigth = 640
-
     @classmethod
     def start(cls, name, scenes_list):
         """
@@ -22,7 +20,7 @@ class Core:
         """
 
         pygame.init()
-        cls.game_display = pygame.display.set_mode((cls.width, cls.heigth))
+        cls.game_display = pygame.display.set_mode((Screen.width, Screen.height))
         pygame.display.set_caption(name)
 
         Renderer.set_display(cls.game_display)

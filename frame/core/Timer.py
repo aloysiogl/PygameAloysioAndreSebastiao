@@ -22,8 +22,8 @@ class Timer:
         :return:
         """
 
-        if cls.clock.get_fps > 0:
-            return cls.clock.get_fps ** -1
+        if cls.clock.get_fps() > 0:
+            return cls.clock.get_fps() ** -1
 
         else:
             return None

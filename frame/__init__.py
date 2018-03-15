@@ -9,4 +9,4 @@ from .components.Transform import Transform
 from .components.meshes import *
 
 __all__ = ["SceneManager", "Scene", "GameObject", "Color"
-    , "Material", "Transform", "CircularMesh", "EventHandler", "Timer"]
+    , "Material", "Transform", "CircularMesh", "PolygonalMesh", "EventHandler", "Timer"]

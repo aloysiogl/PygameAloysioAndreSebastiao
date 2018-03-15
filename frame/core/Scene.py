@@ -53,6 +53,11 @@ class Scene:
 
         pygame.display.flip()
 
+        # Exception for too much game objects in the scene
+
+        if len(self.game_objects_list) >= 3000:
+            raise Exception("Too much game objects in the scene.")
+
     def loop(self):
         """
         This is the game loop for each scene

@@ -13,7 +13,7 @@ class Test2(GameObject):
         self.add_collider(self.collider)
 
     def update(self):
-        self.transform.position-= Vector2(0,1)*Timer.get_dt()*1000
+        self.transform.position -= Vector2(0, 1) * Timer.get_dt() * 1000
         if self.transform.position.y < 0:
             self.destroy()
 

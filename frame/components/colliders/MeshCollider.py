@@ -39,7 +39,7 @@ class MeshCollider(Collider):
             elif self.mesh.__class__.__name__ == 'PolygonalMesh':
                 pass
 
-    def draw_colliding_outline(self):
+    def render_colliding_outline(self):
         """
         Draw the outside of a collider for debug reasons
         """

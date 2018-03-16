@@ -1,6 +1,7 @@
 from frame import *
 from .Test2 import Test2
 
+
 class Buddy(GameObject):
     def __init__(self, transform, pai):
         self.parent_transform = transform
@@ -11,10 +12,8 @@ class Buddy(GameObject):
         self.wait = 0
         self.collider = MeshCollider(self.mesh, self.transform)
 
-
     def start(self):
-        SceneManager.get_current_scene().colliders_map[self] = self.collider
-        pass
+        self.add_collider(self.collider)
 
     def update(self):
         self.dx = self.dx.rotate(100.0*Timer.get_dt())

@@ -17,12 +17,13 @@ class PolygonalMesh(Mesh):
         """
         self.pivot = pivot
 
-    def render(self, transform):
+    def render(self, transform, mode='Filled'):
         """
         This method uses simple polygon render functionality
+        :param mode:
         :param transform:
         """
-        Renderer.render_simple_polygon(self, transform)
+        Renderer.render_simple_polygon(self, transform, mode)
 
     def set_center_pivot(self):
         """

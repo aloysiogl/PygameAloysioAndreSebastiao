@@ -6,7 +6,9 @@ from .core.GameObject import GameObject
 from .core.Representations import Color
 from .components.Material import Material
 from .components.Transform import Transform
+from pygame.math import Vector2
 from .components.meshes import *
 
-__all__ = ["SceneManager", "Scene", "GameObject", "Color"
-    , "Material", "Transform", "CircularMesh", "PolygonalMesh", "EventHandler", "Timer"]
+__all__ = ["Vector2", "SceneManager", "Scene", "GameObject", "Color",
+           "Material", "Transform", "CircularMesh", "PolygonalMesh",
+           "EventHandler", "Timer"]

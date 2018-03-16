@@ -11,7 +11,6 @@ class EventHandler:
     key_right = False
     key_space = False
 
-
     @classmethod
     def handle_events(cls, events_list):
         """

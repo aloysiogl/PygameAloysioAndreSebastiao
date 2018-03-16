@@ -26,7 +26,7 @@ class Timer:
             return cls.clock.get_fps() ** -1
 
         else:
-            return None
+            return 0
 
     @classmethod
     def get_current_time(cls):

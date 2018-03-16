@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import abc
+from .SceneManager import SceneManager
 
 
 class GameObject:
@@ -32,3 +33,19 @@ class GameObject:
         This codes draws the game object in the screen
         """
         pass
+
+    def add_collider(self, collider):
+        """
+        This code places the collider in the scene
+        """
+
+        SceneManager.get_current_scene().colliders_map[self] = collider
+
+    def destroy(self):
+        """
+        This code destroys the game object
+        """
+
+        SceneManager.get_current_scene().game_objects_list.remove(self)
+        if hasattr(self, 'collider'):
+            del SceneManager.get_current_scene().colliders_map[self]

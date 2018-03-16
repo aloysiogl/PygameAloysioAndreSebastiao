@@ -25,21 +25,25 @@ class Renderer:
         cls.__game_display.fill(bg_material.color)
 
     @classmethod
-    def render_simple_circle(cls, circle_mesh, transform):
+    def render_simple_circle(cls, circle_mesh, transform, mode):
         """
         This method renders a single colored circle
+        :param mode:
         :param circle_mesh:
         :param transform:
         """
+
         pygame.gfxdraw.aacircle(cls.__game_display, int(transform.position.x), int(transform.position.y),
                                 int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
-        pygame.gfxdraw.filled_circle(cls.__game_display, int(transform.position.x), int(transform.position.y),
+        if mode == 'Filled':
+            pygame.gfxdraw.filled_circle(cls.__game_display, int(transform.position.x), int(transform.position.y),
                                      int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
 
     @classmethod
-    def render_simple_polygon(cls, polygon_mesh, transform):
+    def render_simple_polygon(cls, polygon_mesh, transform, mode):
         """
         This method renders a single colored circle
+        :param mode:
         :param polygon_mesh:
         :param transform:
         """
@@ -58,6 +62,6 @@ class Renderer:
             points_list.append(rotated_distance + transform.position)
 
         # Drawing polygon
-
         pygame.gfxdraw.aapolygon(cls.__game_display, points_list, polygon_mesh.material.color)
-        pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)
+        if mode == 'Filled':
+            pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)

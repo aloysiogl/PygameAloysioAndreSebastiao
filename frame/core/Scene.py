@@ -15,6 +15,7 @@ class Scene:
         :param game_objects_list:
         """
         self.game_objects_list = game_objects_list
+        self.colliders_map = {}
         self.bg_material = bg_material
         self.scene_over = False
 
@@ -45,6 +46,15 @@ class Scene:
 
         EventHandler.handle_events(pygame.event.get())
 
+        # Running collisions
+
+        for game_object in self.colliders_map:
+            collider = self.colliders_map[game_object]
+            collider.collisions_list = [gm_obj for gm_obj in self.colliders_map if self.colliders_map[gm_obj]
+                                        is not collider and collider.is_colliding(self.colliders_map[gm_obj])]
+
+        # Running draws and updates
+
         for game_object in self.game_objects_list:
             game_object.update()
             game_object.draw()
@@ -56,7 +66,9 @@ class Scene:
         # Exception for too much game objects in the scene
 
         if len(self.game_objects_list) >= 3000:
-            raise Exception("Too much game objects in the scene.")
+            raise Exception("Too many game objects in the scene.")
+        if len(self.colliders_map) >= 100:
+            raise Exception("Too many colliders in the scene")
 
     def loop(self):
         """
@@ -77,6 +89,8 @@ class Scene:
         This method add a game object to the game object list
         :param game_object:
         """
+
+        game_object.start()
 
         self.game_objects_list.append(game_object)
 

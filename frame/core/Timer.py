@@ -19,7 +19,7 @@ class Timer:
     def get_dt(cls):
         """
         This method gives the duration of a frame
-        :return:
+        :return: the duration of a frame in seconds
         """
 
         if cls.clock.get_fps() > 0:
@@ -31,8 +31,8 @@ class Timer:
     @classmethod
     def get_current_time(cls):
         """
-        Retunrs the current time in seconds
-        :return:
+        Returns the current time in seconds
+        :return: the current time in seconds
         """
 
         return pygame.time.get_ticks()/1000

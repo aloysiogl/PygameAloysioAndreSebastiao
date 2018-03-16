@@ -15,7 +15,7 @@ class EventHandler:
     def handle_events(cls, events_list):
         """
         This method updates the events list
-        :param events_list:
+        :param events_list: the list of events in the current scene
         """
 
         for event in events_list:
@@ -24,14 +24,15 @@ class EventHandler:
             if current_event == pygame.QUIT:
                 cls.__quit()
             elif current_event == pygame.KEYDOWN:
-                cls.__keydown(event)
+                cls.__key_down(event)
             elif current_event == pygame.KEYUP:
-                cls.__keyup(event)
+                cls.__key_up(event)
 
     @classmethod
-    def __keydown(cls, current_event):
+    def __key_down(cls, current_event):
         """
-        Updates keys on keydown
+        Updates keys on key down
+        :param current_event: the key press event
         """
 
         if current_event.key == pygame.K_UP:
@@ -46,9 +47,10 @@ class EventHandler:
             cls.key_space = True
 
     @classmethod
-    def __keyup(cls, current_event):
+    def __key_up(cls, current_event):
         """
-        Updates key on keyup
+        Updates key on key up
+        :param current_event: the key release event
         """
 
         if current_event.key == pygame.K_UP:

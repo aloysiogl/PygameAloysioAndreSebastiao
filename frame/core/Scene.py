@@ -12,7 +12,8 @@ class Scene:
     def __init__(self, game_objects_list, bg_material):
         """
         The most important role for the scene is to contain the game objects
-        :param game_objects_list:
+        :param game_objects_list: the initial list of game objects
+        :param bg_material: the background
         """
         self.game_objects_list = game_objects_list
         self.colliders_map = {}
@@ -87,7 +88,7 @@ class Scene:
     def add_game_object(self, game_object):
         """
         This method add a game object to the game object list
-        :param game_object:
+        :param game_object: game object to be added
         """
 
         game_object.start()

@@ -11,23 +11,23 @@ class PolygonalMesh(Mesh):
         super().__init__(points, material)
         """
         A polygon is defined by its points and material
-        :param points:
-        :param material:
-        :param pivot:
+        :param points: the points of the polygon
+        :param material: the material of the polygon
+        :param pivot: the pivot point for rotation and scaling
         """
         self.pivot = pivot
 
     def render(self, transform, mode='Filled'):
         """
         This method uses simple polygon render functionality
-        :param mode:
-        :param transform:
+        :param mode: mode for rendering if supported
+        :param transform: transform for rendering
         """
         Renderer.render_simple_polygon(self, transform, mode)
 
     def set_center_pivot(self):
         """
-        This method sets the pivot to the center
+        This method sets the pivot to the geometric center
         """
 
         center = Vector2(0, 0)

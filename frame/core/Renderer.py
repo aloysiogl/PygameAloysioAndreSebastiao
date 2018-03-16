@@ -12,7 +12,7 @@ class Renderer:
     def set_display(cls, display):
         """
         This method sets the display for rendering
-        :param display:
+        :param display: current game display
         """
         cls.__game_display = display
 
@@ -20,7 +20,7 @@ class Renderer:
     def render_background(cls, bg_material):
         """
         This method draws the background
-        :param bg_material:
+        :param bg_material: the material to be rendered as background
         """
         cls.__game_display.fill(bg_material.color)
 
@@ -28,9 +28,9 @@ class Renderer:
     def render_simple_circle(cls, circle_mesh, transform, mode):
         """
         This method renders a single colored circle
-        :param mode:
-        :param circle_mesh:
-        :param transform:
+        :param mode: distinguish between different types of render
+        :param circle_mesh: the mesh containing radius
+        :param transform: the transform relations
         """
 
         pygame.gfxdraw.aacircle(cls.__game_display, int(transform.position.x), int(transform.position.y),
@@ -43,9 +43,9 @@ class Renderer:
     def render_simple_polygon(cls, polygon_mesh, transform, mode):
         """
         This method renders a single colored circle
-        :param mode:
-        :param polygon_mesh:
-        :param transform:
+        :param mode: distinguish between different types of render
+        :param polygon_mesh: the mesh containing points
+        :param transform: the transform relations
         """
 
         # Getting points list

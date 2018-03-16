@@ -11,8 +11,7 @@ class Core:
     def start(cls, name):
         """
         Start the game (initialize pygame)
-        :param name:
-        :param scenes_list:
+        :param name: the game name
         """
 
         pygame.init()

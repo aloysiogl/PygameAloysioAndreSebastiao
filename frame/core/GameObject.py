@@ -9,7 +9,7 @@ class GameObject:
     def __init__(self, transform):
         """
         Every game object must be associated with a position rotation and scale
-        :param transform:
+        :param transform: the transform quantities for the object
         """
         self.transform = transform
 
@@ -37,6 +37,7 @@ class GameObject:
     def add_collider(self, collider):
         """
         This code places the collider in the scene
+        :param collider: the collider to be added in the scene
         """
 
         SceneManager.get_current_scene().colliders_map[self] = collider

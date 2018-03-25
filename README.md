@@ -49,7 +49,7 @@ Please read [the contributind document](docs/CONTRIBUTING.md) for details on the
 
 ## License
 
-This project is licensed under the MIT License - see the [licence](docs/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [licence](docs/LICENCE.md) file for details.
 
 ## Acknowledgments
 

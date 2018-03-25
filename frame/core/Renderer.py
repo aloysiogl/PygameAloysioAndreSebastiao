@@ -2,7 +2,6 @@
 
 import pygame
 from pygame import gfxdraw
-from pygame.math import Vector2
 
 
 class Renderer:
@@ -62,6 +61,7 @@ class Renderer:
             points_list.append(rotated_distance + transform.position)
 
         # Drawing polygon
+
         pygame.gfxdraw.aapolygon(cls.__game_display, points_list, polygon_mesh.material.color)
         if mode == 'Filled':
             pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)

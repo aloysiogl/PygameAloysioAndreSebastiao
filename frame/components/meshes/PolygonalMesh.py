@@ -17,6 +17,24 @@ class PolygonalMesh(Mesh):
         """
         self.pivot = pivot
 
+        # Storing center
+
+        self.center = Vector2(0, 0)
+
+        for point in self.points:
+            self.center += point
+
+        self.center = self.center/len(self.points)
+
+        # Storing safe distance for collisions
+
+        self.safe_dist = 0
+
+        for point in self.points:
+            vect = point - self.center
+            if vect.length() > self.safe_dist:
+                self.safe_dist = vect.length()
+
     def render(self, transform, mode='Filled'):
         """
         This method uses simple polygon render functionality
@@ -30,9 +48,4 @@ class PolygonalMesh(Mesh):
         This method sets the pivot to the geometric center
         """
 
-        center = Vector2(0, 0)
-
-        for point in self.points:
-            center += point
-
-        self.pivot = center/len(self.points)
+        self.pivot = self.center

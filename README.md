@@ -28,7 +28,7 @@ $ sudo pip3.5 install pygame
 To run the game simply run the game Python script using Python3:
 
 ```
-$ python3 InfinityShooter
+$ python3 InfinityShooter.py
 ```
 
 ## Understanding the code

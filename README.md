@@ -39,6 +39,13 @@ $ python3 InfinityShooter.py
 
 Please read [the contributind document](docs/CONTRIBUTING.md) for details on the inner working of the code to help us make a better game.
 
+## About
+
+This project aims to create a code base to make easier the precess of game development using Pygame. Therefore, the main frame of the game is flexible and can be addapted to multiple types of games.
+To understand a little bit more about how the code is structered visit the [wiki]().
+
+The objective of infinity shooter is to destroy the enemy and avoid obstacles. This game is an exaple of the capabilities of the game structure.
+
 ## Authors
 
 * **Aloysio Galvão Lopes** - [AloysioGL](https://github.com/aloysiogl)
@@ -51,7 +58,7 @@ This project is licensed under the MIT License - see the [licence](docs/LICENCE.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* **Professor Edgar Toshiro Yano** - [Curriculum](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798593T1&idiomaExibicao=2)
 
 
 

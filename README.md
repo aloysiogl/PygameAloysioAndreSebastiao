@@ -37,7 +37,7 @@ $ python3 InfinityShooter.py
 
 ## Contributing
 
-Please read [the contributind document](docs/CONTRIBUTING.md) for details on the inner working of the code to help us make a better game.
+Please read [the contributing document](docs/CONTRIBUTING.md) for details on the inner working of the code to help us make a better game.
 
 ## About
 

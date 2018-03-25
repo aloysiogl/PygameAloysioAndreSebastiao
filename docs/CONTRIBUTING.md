@@ -10,7 +10,7 @@ code in this section visit the wiki page about the [frame](https://github.com/al
 
 The structure is what describes the game as it is. this means that changes in this part just define the behavior of Infinity Shooter. As this behavior is not critic if the frame is being used
 by other game pull requests are going to be accepted in a shor period of time. To understand a little bit more about the
-code in this section visit the wiki page about the [frame](https://github.com/aloysiogl/PygameAloysioAndreSebastiao/wiki/frame).
+code in this section visit the wiki page about the [structure](https://github.com/aloysiogl/PygameAloysioAndreSebastiao/wiki/structure).
 
 
 ## Notes about documentation

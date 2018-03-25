@@ -31,8 +31,6 @@ To run the game simply run the game Python script using Python3:
 $ python3 InfinityShooter.py
 ```
 
-## Understanding the code
-
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
@@ -41,21 +39,17 @@ $ python3 InfinityShooter.py
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+Please read [the contributind document](docs/CONTRIBUTING.md) for details on the inner working of the code to help us make a better game.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Aloysio Galvão Lopes** - [AloysioGL](https://github.com/aloysiogl)
+* **André Abreu Moreno** - [AndreAbreuMoreno](https://github.com/AndreAbreuMoreno)
+* **Sebastião Beethoven Brandão Filho** - [BeethovenBrandaoFilho](https://github.com/beethovenbrandaofilho)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [licence](docs/LICENSE.md) file for details.
 
 ## Acknowledgments
 

@@ -45,3 +45,4 @@ class Test(GameObject):
     def draw(self):
         self.mesh2.render(self.transform)
         self.mesh.render(self.transform)
+        self.collider.render_colliding_outline()

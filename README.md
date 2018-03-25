@@ -42,7 +42,7 @@ Please read [the contributind document](docs/CONTRIBUTING.md) for details on the
 ## About
 
 This project aims to create a code base to make easier the precess of game development using Pygame. Therefore, the main frame of the game is flexible and can be addapted to multiple types of games.
-To understand a little bit more about how the code is structered visit the [wiki]().
+To understand a little bit more about how the code is structered visit the [wiki](https://github.com/aloysiogl/PygameAloysioAndreSebastiao/wiki/Infinity-Shooter).
 
 The objective of infinity shooter is to destroy the enemy and avoid obstacles. This game is an exaple of the capabilities of the game structure.
 

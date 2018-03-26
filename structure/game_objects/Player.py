@@ -1,4 +1,5 @@
 from frame import *
+from .MainShot import MainShot
 
 
 class Player(GameObject):
@@ -17,7 +18,7 @@ class Player(GameObject):
         self.mesh2 = PolygonalMesh([Vector2(0,-40), Vector2(20,-150), Vector2(40,-40), Vector2(20,150), Vector2(0,40)], Material(Color.yellow))
         self.mesh3 = PolygonalMesh([Vector2(0, -40), Vector2(-20, -150), Vector2(-40, -40)], Material(Color.yellow))
 
-        #
+        # Flow control parameters
 
         self.wait = 0
         self.mesh.set_center_pivot()
@@ -27,7 +28,8 @@ class Player(GameObject):
 
         self.transform.scale = 0.1
         self.speed = 500
-
+        self.shoot_delay = 0.5
+        self.turret = "right"
 
     def start(self):
         """
@@ -46,6 +48,10 @@ class Player(GameObject):
         self.detect_shoot()
 
     def draw(self):
+        """
+        Rendering its meshes
+        """
+
         self.mesh2.render(self.transform)
         self.mesh3.render(self.transform)
         self.mesh.render(self.transform)
@@ -70,6 +76,17 @@ class Player(GameObject):
         """
 
         if EventHandler.key_space and self.wait < Timer.get_current_time():
-            SceneManager.get_current_scene().add_game_object(
-                Test2K(Transform(Vector2(self.transform.position), 0, 2, 1)))
-            self.wait = Timer.get_current_time() + 0.2
+
+            # Selecting the right turret
+
+            if self.turret == "right":
+                SceneManager.get_current_scene().add_game_object(
+                    MainShot(Transform(Vector2(self.transform.position + Vector2(10,0)), 0, 1, 0)))
+                self.turret = "left"
+
+            elif self.turret == "left":
+                SceneManager.get_current_scene().add_game_object(
+                    MainShot(Transform(Vector2(self.transform.position + Vector2(-10, 0)), 0, 1, 0)))
+                self.turret = "right"
+
+            self.wait = Timer.get_current_time() + self.shoot_delay

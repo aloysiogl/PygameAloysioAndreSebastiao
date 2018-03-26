@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from frame import *
 from .MainShot import MainShot
 

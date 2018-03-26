@@ -1,5 +1,5 @@
 from frame import *
-from TestesGameobjects.Test2 import Test2
+from test.Test2 import Test2
 
 
 class Buddy(GameObject):

@@ -1,6 +1,6 @@
 from frame import *
-from TestesGameobjects.Test2 import Test2
-from TestesGameobjects.Buddy import Buddy
+from test.Test2 import Test2
+from test.Buddy import Buddy
 
 
 class Test(GameObject):

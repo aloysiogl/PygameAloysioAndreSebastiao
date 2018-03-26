@@ -1,6 +1,6 @@
 from frame import *
-from .Test2 import Test2
-from .Buddy import Buddy
+from test.Test2 import Test2
+from test.Buddy import Buddy
 
 
 class Test(GameObject):
@@ -22,6 +22,7 @@ class Test(GameObject):
 
     def update(self):
         if EventHandler.key_up:
+            print(2)
             self.transform.position -= Timer.get_dt() * 500 * Vector2(0, 1)
             self.transform.scale += 0.005
             self.buddy.mesh.material.color = Color.green

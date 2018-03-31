@@ -40,9 +40,10 @@ class Renderer:
                                      int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
 
     @classmethod
-    def render_simple_polygon(cls, polygon_mesh, transform, mode):
+    def render_simple_polygon(cls, polygon_mesh, transform, mode, alpha):
         """
         This method renders a single colored circle
+        :param alpha: the transparency
         :param mode: distinguish between different types of render
         :param polygon_mesh: the mesh containing points
         :param transform: the transform relations
@@ -63,9 +64,13 @@ class Renderer:
 
         # Drawing polygon
 
-        pygame.gfxdraw.aapolygon(cls.__game_display, points_list, polygon_mesh.material.color)
+        color = (polygon_mesh.material.color[0], polygon_mesh.material.color[1], polygon_mesh.material.color[2], alpha)
+
+        if alpha == 255:
+            pygame.gfxdraw.aapolygon(cls.__game_display, points_list, color)
+
         if mode == 'Filled':
-            pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)
+            pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, color)
 
     @classmethod
     def render_simple_font(cls, font_mesh, transform, alpha):

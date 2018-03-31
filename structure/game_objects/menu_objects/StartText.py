@@ -16,7 +16,7 @@ class StartText(GameObject):
 
         self.direction = True
 
-        # Alpha animation parameters
+        # Animation parameters
 
         self.alpha = 0
 
@@ -34,11 +34,13 @@ class StartText(GameObject):
             self.alpha +=self.speed*Timer.get_dt()
             self.speed *= 1.01
             if self.alpha >=250:
+                self.alpha = 250
                 self.direction = not self.direction
         else:
             self.alpha -= self.speed * Timer.get_dt()
             self.speed /= 1.01
-            if self.alpha <= 10:
+            if self.alpha <= 40:
+                self.alpha = 40
                 self.direction = not self.direction
         pass
 

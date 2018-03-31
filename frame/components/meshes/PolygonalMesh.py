@@ -35,13 +35,14 @@ class PolygonalMesh(Mesh):
             if vect.length() > self.safe_dist:
                 self.safe_dist = vect.length()
 
-    def render(self, transform, mode='Filled'):
+    def render(self, transform, mode='Filled', alpha=255):
         """
         This method uses simple polygon render functionality
+        :param alpha: the transparency
         :param mode: mode for rendering if supported
         :param transform: transform for rendering
         """
-        Renderer.render_simple_polygon(self, transform, mode)
+        Renderer.render_simple_polygon(self, transform, mode, alpha)
 
     def set_center_pivot(self):
         """

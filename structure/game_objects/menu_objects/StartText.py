@@ -14,10 +14,32 @@ class StartText(GameObject):
 
         self.mesh_text = TextMesh("Press space!", Font.space_font, Material(Color.white))
 
+        self.direction = True
+
+        # Alpha animation parameters
+
+        self.alpha = 0
+
+        self.speed = 70
+
     def start(self):
         pass
 
     def update(self):
+        """
+        Running blinking animation
+        """
+
+        if self.direction:
+            self.alpha +=self.speed*Timer.get_dt()
+            self.speed *= 1.01
+            if self.alpha >=250:
+                self.direction = not self.direction
+        else:
+            self.alpha -= self.speed * Timer.get_dt()
+            self.speed /= 1.01
+            if self.alpha <= 10:
+                self.direction = not self.direction
         pass
 
     def draw(self):
@@ -25,4 +47,5 @@ class StartText(GameObject):
         Rendering its mesh
         """
 
-        self.mesh_text.render(Transform(Vector2(self.transform.position+Vector2(-240, 0)), 0, self.transform.scale))
+        self.mesh_text.render(Transform(Vector2(self.transform.position+Vector2(-240, 0)), 0, self.transform.scale),
+                                alpha=self.alpha)

@@ -68,9 +68,10 @@ class Renderer:
             pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)
 
     @classmethod
-    def render_simple_font(cls, font_mesh, transform, alpha=255):
+    def render_simple_font(cls, font_mesh, transform, alpha):
         """
         This method renders a single colored text
+        :param alpha: the text alpha
         :param font_mesh: the mesh to be rendered
         :param transform: the transform relations of the text
         """

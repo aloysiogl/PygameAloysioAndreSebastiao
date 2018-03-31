@@ -31,35 +31,34 @@ To run the game simply run the game Python script using Python3:
 $ python3 InfinityShooter.py
 ```
 
-## Understanding the code
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Pygame](https://www.pygame.org/) - Pyhton3 game library used in this game
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [the contributing document](docs/CONTRIBUTING.md) for details on the inner working of the code to help us make a better game.
 
-## Versioning
+## About
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+This project aims to create a code base to make easier the precess of game development using Pygame. Therefore, the main frame of the game is flexible and can be addapted to multiple types of games.
+To understand a little bit more about how the code is structered visit the [wiki](https://github.com/aloysiogl/PygameAloysioAndreSebastiao/wiki/Home).
+
+The objective of infinity shooter is to destroy the enemy and avoid obstacles. This game is an exaple of the capabilities of the game structure.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Aloysio Galvão Lopes** - [AloysioGL](https://github.com/aloysiogl)
+* **André Abreu Moreno** - [AndreAbreuMoreno](https://github.com/AndreAbreuMoreno)
+* **Sebastião Beethoven Brandão Filho** - [BeethovenBrandaoFilho](https://github.com/beethovenbrandaofilho)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [licence](docs/LICENCE.md) file for details.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* **Professor Edgar Toshiro Yano** - [Curriculum](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4798593T1&idiomaExibicao=2)
 
 
 

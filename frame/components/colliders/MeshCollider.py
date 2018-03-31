@@ -163,7 +163,7 @@ class MeshCollider(Collider):
 
                     translated_point = collider.transform.position - my_points[-1]
 
-                    if abs(translated_point.cross(edge) / edge.length()) < reference_distance:
+                    if abs(translated_point.cross(edge)) < reference_distance*edge.length():
                         if 0 < translated_point.dot(edge) < edge.length() ** 2:
                             return True
 
@@ -171,7 +171,7 @@ class MeshCollider(Collider):
                         translated_point = collider.transform.position - my_points[i]
                         edge = my_points[i + 1] - my_points[i]
 
-                        if abs(translated_point.cross(edge) / edge.length()) < reference_distance:
+                        if abs(translated_point.cross(edge)) < reference_distance* edge.length():
                             if 0 < translated_point.dot(edge) < edge.length() ** 2:
                                 return True
 

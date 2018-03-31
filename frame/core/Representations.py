@@ -16,3 +16,7 @@ class Screen:
     width = 640
     height = 640
 
+
+class Font:
+    space_font = "assets/space_age.ttf"
+

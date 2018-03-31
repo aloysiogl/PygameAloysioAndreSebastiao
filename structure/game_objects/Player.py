@@ -2,6 +2,8 @@
 
 from frame import *
 from .MainShot import MainShot
+from assets.GameSounds import Music
+from assets.GameSounds import Sound
 
 
 class Player(GameObject):
@@ -30,14 +32,18 @@ class Player(GameObject):
 
         self.transform.scale = 0.1
         self.speed = 500
-        self.shoot_delay = 0.5
+        self.shoot_delay = 0.2
         self.turret = "right"
+
+        self.font_mesh = TextMesh("teste", Font.space_font, Material(Color.black))
+
 
     def start(self):
         """
         Adding the collider to the scene
         """
 
+        SoundPlayer.play_music(Music.main_scene)
         self.add_collider(self.collider)
 
     def update(self):
@@ -57,6 +63,8 @@ class Player(GameObject):
         self.mesh2.render(self.transform)
         self.mesh3.render(self.transform)
         self.mesh.render(self.transform)
+        self.collider.render_colliding_outline()
+        self.font_mesh.render(Transform(Vector2(100,100), 0, 50))
 
     def detect_movement(self):
         """
@@ -80,6 +88,8 @@ class Player(GameObject):
         if EventHandler.key_space and self.wait < Timer.get_current_time():
 
             # Selecting the right turret
+
+            Sound.get_sound('blaster').play()
 
             if self.turret == "right":
                 SceneManager.get_current_scene().add_game_object(

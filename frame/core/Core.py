@@ -14,6 +14,7 @@ class Core:
         :param name: the game name
         """
 
+        pygame.mixer.pre_init(44100, 16, 2, 4096)
         pygame.init()
         cls.game_display = pygame.display.set_mode((Screen.width, Screen.height))
         pygame.display.set_caption(name)

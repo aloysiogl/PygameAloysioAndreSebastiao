@@ -18,9 +18,11 @@ class Player(GameObject):
                                    Vector2(130, -300),Vector2(160,00),Vector2(130,250), Vector2(80,0),Vector2(40,150),
                                    Vector2(0, 50), Vector2(-40,150), Vector2(-80,0), Vector2(-130,250), Vector2(-160,0),
                                    Vector2(-130,-300), Vector2(-80, -70), Vector2(-60, -200), Vector2(-55,-250), Vector2(-40,-200),
-                                   Vector2(0,-200)], Material(Color.black))
+                                   Vector2(0,-200)], Material(Color.white))
         self.mesh2 = PolygonalMesh([Vector2(0,-40), Vector2(20,-150), Vector2(40,-40), Vector2(20,150), Vector2(0,40)], Material(Color.yellow))
         self.mesh3 = PolygonalMesh([Vector2(0, -40), Vector2(-20, -150), Vector2(-40, -40)], Material(Color.yellow))
+        self.mesh4 = PolygonalMesh([Vector2(20,-100),Vector2(40,-80),Vector2(40,-50),Vector2(-40,-50), Vector2(-40,-80),
+                                    Vector2(-20,-100)], Material(Color.black))
 
         # Flow control parameters
 
@@ -63,8 +65,7 @@ class Player(GameObject):
         self.mesh2.render(self.transform)
         self.mesh3.render(self.transform)
         self.mesh.render(self.transform)
-        self.collider.render_colliding_outline()
-        self.font_mesh.render(Transform(Vector2(100,100), 0, 50))
+        self.mesh4.render(self.transform)
 
     def detect_movement(self):
         """

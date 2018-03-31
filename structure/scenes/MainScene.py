@@ -7,4 +7,9 @@ from pygame.math import Vector2
 from structure.game_objects.Player import Player
 from structure.game_objects.EnemyGenerator import EnemyGenerator
 
-main_scene = Scene([Player(Vector2(300,300)), EnemyGenerator()], Material(Color.white))
+from structure.game_objects.BlackWrap import BlackWrap
+from structure.game_objects.LifeBar import LifeBar
+
+player = Player(Vector2(300,300))
+
+main_scene = Scene([player, EnemyGenerator(), LifeBar(Vector2(0, 0), player), BlackWrap(Vector2(0, 0)), BlackWrap(Vector2(340, 0))], Material(Color.white))

@@ -35,8 +35,9 @@ class Player(GameObject):
         self.shoot_delay = 0.2
         self.turret = "right"
 
-        self.font_mesh = TextMesh("teste", Font.space_font, Material(Color.black))
+        self.texto = "sadasds"
 
+        self.font_mesh = TextMesh(self.texto, Font.space_font, Material(Color.black))
 
     def start(self):
         """
@@ -50,6 +51,8 @@ class Player(GameObject):
         """
         Running movement and shoot
         """
+
+        self.font_mesh.text = str(Timer.get_current_time())
 
         self.detect_movement()
 

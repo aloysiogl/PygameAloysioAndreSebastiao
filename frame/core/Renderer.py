@@ -68,7 +68,7 @@ class Renderer:
             pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)
 
     @classmethod
-    def render_simple_font(cls, font_mesh, transform):
+    def render_simple_font(cls, font_mesh, transform, alpha=255):
         """
         This method renders a single colored text
         :param font_mesh: the mesh to be rendered
@@ -81,5 +81,9 @@ class Renderer:
 
         # Displaying the font
 
-        text = font.render(font_mesh.text, True, font_mesh.material.color)
-        cls.__game_display.blit(text, (transform.position.x, transform.position.y))
+        color_alpha = tuple([int(alpha/255*x) for x in font_mesh.material.color])
+
+        text = font.render(font_mesh.text, True, color_alpha)
+        text2 = text.convert_alpha()
+        text2.set_alpha(10)
+        cls.__game_display.blit(text2, (transform.position.x, transform.position.y))

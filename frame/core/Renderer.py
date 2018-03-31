@@ -34,6 +34,7 @@ class Renderer:
 
         pygame.gfxdraw.aacircle(cls.__game_display, int(transform.position.x), int(transform.position.y),
                                 int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
+
         if mode == 'Filled':
             pygame.gfxdraw.filled_circle(cls.__game_display, int(transform.position.x), int(transform.position.y),
                                      int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
@@ -65,3 +66,20 @@ class Renderer:
         pygame.gfxdraw.aapolygon(cls.__game_display, points_list, polygon_mesh.material.color)
         if mode == 'Filled':
             pygame.gfxdraw.filled_polygon(cls.__game_display, points_list, polygon_mesh.material.color)
+
+    @classmethod
+    def render_simple_font(cls, font_mesh, transform):
+        """
+        This method renders a single colored text
+        :param font_mesh: the mesh to be rendered
+        :param transform: the transform relations of the text
+        """
+
+        # Creating font
+
+        font = pygame.font.Font(font_mesh.font, transform.scale)
+
+        # Displaying the font
+
+        text = font.render(font_mesh.text, True, font_mesh.material.color)
+        cls.__game_display.blit(text, (transform.position.x, transform.position.y))

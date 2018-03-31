@@ -23,7 +23,7 @@ class EnemyGenerator(GameObject):
         if self.wait < Timer.get_current_time():
             SceneManager.get_current_scene().add_game_object(BasicEnemy(Transform(Vector2(randint(55, 510), randint(55, 320)))))
 
-            self.wait = Timer.get_current_time() + randint(1, 2)*0.75
+            self.wait = Timer.get_current_time() + randint(1, 2)*0.5
 
     def draw(self):
         pass

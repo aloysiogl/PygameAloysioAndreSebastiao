@@ -17,6 +17,5 @@ class LifeBar(GameObject):
         if len(self.player.collider.collisions_list) > 0:
             self.transform.position -= Timer.get_dt() * Vector2(60, 0)
 
-
     def draw(self):
         self.mesh.render(self.transform)

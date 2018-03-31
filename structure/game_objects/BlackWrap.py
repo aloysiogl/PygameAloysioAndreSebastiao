@@ -6,13 +6,13 @@ class BlackWrap(GameObject):
         super().__init__(Transform(transform))
         # Black wrap
         self.mesh1 = PolygonalMesh([Vector2(0, 3), Vector2(300, 3), Vector2(300, 8), Vector2(0, 8)],
-                                   Material(Color.black))
+                                   Material(Color.white))
         self.mesh2 = PolygonalMesh([Vector2(0, 8), Vector2(5, 8), Vector2(5, 38), Vector2(0, 38)],
-                                   Material(Color.black))
+                                   Material(Color.white))
         self.mesh3 = PolygonalMesh([Vector2(295, 8), Vector2(300, 8), Vector2(300, 38), Vector2(295, 38)],
-                                   Material(Color.black))
+                                   Material(Color.white))
         self.mesh4 = PolygonalMesh([Vector2(0, 38), Vector2(300, 38), Vector2(300, 43), Vector2(0, 43)],
-                                   Material(Color.black))
+                                   Material(Color.white))
 
     def start(self):
         pass

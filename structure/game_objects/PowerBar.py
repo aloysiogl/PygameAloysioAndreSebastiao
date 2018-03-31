@@ -15,7 +15,9 @@ class PowerBar(GameObject):
 
     def update(self):
         if self.player.turret is not 'right':
-            self.transform.position += Timer.get_dt() * Vector2(30, 0)
+            self.transform.position += Timer.get_dt() * 50 * Vector2(1, 0)
+        if self.transform.position[0] > 635:
+            self.transform.position = (340, 0)
 
     def draw(self):
         self.mesh.render(self.transform)

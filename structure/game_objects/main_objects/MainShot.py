@@ -8,7 +8,7 @@ class MainShot(GameObject):
     def __init__(self, transform):
         """
         The main shot is the most simple shot for the player
-        :param initial_pos: the starting position for the player
+        :param transform: the transform relations for the shot
         """
         super().__init__(transform)
 

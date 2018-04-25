@@ -17,10 +17,11 @@ class TextMesh(Mesh):
         self.text = text
         self.font = font
 
-    def render(self, transform):
+    def render(self, transform, alpha=255):
         """
         This method uses simple font render functionality
+        :param alpha: the alpha t be rendered
         :param transform: the transform to render the circle
         """
-        Renderer.render_simple_font(self, transform)
+        Renderer.render_simple_font(self, transform, alpha)
 

@@ -2,7 +2,7 @@
 
 from frame import *
 from random import randint
-from .BasicEnemy import BasicEnemy
+from structure.game_objects.main_objects.enemies.BasicEnemy import BasicEnemy
 
 
 class EnemyGenerator(GameObject):

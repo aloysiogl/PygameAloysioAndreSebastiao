@@ -20,7 +20,8 @@ class MenuController(GameObject):
         SoundPlayer.play_music(Music.main_scene, -1)
 
     def update(self):
-        pass
+        if EventHandler.key_space:
+            SceneManager.next_scene()
 
     def draw(self):
         pass

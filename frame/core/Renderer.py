@@ -40,7 +40,7 @@ class Renderer:
                                      int(circle_mesh.radius * transform.scale), circle_mesh.material.color)
 
     @classmethod
-    def render_simple_polygon(cls, polygon_mesh, transform, mode, alpha):
+    def render_simple_polygon(cls, polygon_mesh, transform, mode, alpha=255):
         """
         This method renders a single colored circle
         :param alpha: the transparency

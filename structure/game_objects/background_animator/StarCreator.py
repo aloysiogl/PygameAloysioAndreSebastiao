@@ -9,8 +9,7 @@ from .Star import Star
 class StarCreator(GameObject):
     def __init__(self):
         """
-
-        :param transform:
+        Initializing base object class
         """
         super().__init__(Transform(Vector2(0, 0)))
 

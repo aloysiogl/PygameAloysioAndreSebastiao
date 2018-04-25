@@ -25,7 +25,9 @@ class SceneManager:
         """
 
         if cls.current_scene_index < len(cls.scenes_list):
+            cls.get_current_scene().end()
             cls.current_scene_index += 1
+            cls.run_current_scene()
 
         else:
             cls.exit_game()

@@ -37,6 +37,10 @@ class EnemyShot(GameObject):
         if self.transform.position.y > 640:
             self.destroy()
 
+        for x in self.collider.collisions_list:
+            if x.__class__.__name__ == "Player":
+                self.destroy()
+
     def draw(self):
         """
         Rendering its mesh

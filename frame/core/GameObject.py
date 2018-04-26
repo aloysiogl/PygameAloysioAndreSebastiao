@@ -49,4 +49,5 @@ class GameObject:
         if self in SceneManager.get_current_scene().game_objects_list:
             SceneManager.get_current_scene().game_objects_list.remove(self)
         if hasattr(self, 'collider'):
-            del SceneManager.get_current_scene().colliders_map[self]
+            if self in SceneManager.get_current_scene().colliders_map:
+                del SceneManager.get_current_scene().colliders_map[self]

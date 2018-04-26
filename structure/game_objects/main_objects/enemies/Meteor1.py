@@ -35,8 +35,8 @@ class Meteor1(GameObject):
         self.transform.rotation += self.rotation_speed * Timer.get_dt() * 25
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.destroy()
+        #if self.transform.position.y - self.radius < 0:
+        #    self.destroy()
 
         if self.transform.position.y + self.radius > 640:
             self.destroy()

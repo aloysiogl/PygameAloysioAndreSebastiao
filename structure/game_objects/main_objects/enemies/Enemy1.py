@@ -32,8 +32,8 @@ class Enemy1(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.destroy()
+        #if self.transform.position.y - self.radius < 0:
+        #    self.destroy()
 
         if self.transform.position.y + self.radius > 640:
             self.destroy()

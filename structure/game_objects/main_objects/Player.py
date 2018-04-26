@@ -2,9 +2,9 @@
 
 from frame import *
 from structure.game_objects.main_objects.MainShot import MainShot
-from assets.GameSounds import Music
 from assets.GameSounds import Sound
 
+import pygame
 
 class Player(GameObject):
 
@@ -15,7 +15,7 @@ class Player(GameObject):
         """
         super().__init__(Transform(initial_pos))
         self.mesh = PolygonalMesh([Vector2(0,-200), Vector2(40,-200), Vector2(55,-250),Vector2(60,-200),Vector2(80, -70),
-                                   Vector2(130, -300),Vector2(160,00),Vector2(130,250), Vector2(80,0),Vector2(40,150),
+                                   Vector2(130, -300), Vector2(160,00),Vector2(130,250), Vector2(80,0),Vector2(40,150),
                                    Vector2(0, 50), Vector2(-40,150), Vector2(-80,0), Vector2(-130,250), Vector2(-160,0),
                                    Vector2(-130,-300), Vector2(-80, -70), Vector2(-60, -200), Vector2(-55,-250), Vector2(-40,-200),
                                    Vector2(0,-200)], Material(Color.white))
@@ -46,7 +46,6 @@ class Player(GameObject):
         Adding the collider to the scene
         """
 
-        SoundPlayer.play_music(Music.main_scene)
         self.add_collider(self.collider)
 
     def update(self):
@@ -93,7 +92,9 @@ class Player(GameObject):
 
             # Selecting the right turret
 
-            Sound.get_sound('blaster').play()
+            sound = Sound.get_sound('blaster')
+            sound.set_volume(0.3)
+            sound.play()
 
             if self.turret == "right":
                 SceneManager.get_current_scene().add_game_object(

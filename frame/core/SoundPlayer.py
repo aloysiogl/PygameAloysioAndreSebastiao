@@ -16,3 +16,11 @@ class SoundPlayer:
 
         pygame.mixer.music.load(music)
         pygame.mixer.music.play(loops=loops, start=start)
+
+    @classmethod
+    def fade_out(cls):
+        """
+        This method fades out the current music
+        """
+
+        pygame.mixer.music.fadeout(2000)

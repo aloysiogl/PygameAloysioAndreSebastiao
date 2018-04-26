@@ -4,7 +4,8 @@ import pygame
 
 
 class Music:
-    main_scene = 'assets/main_sound.mp3'
+    menu_scene = 'assets/menu_scene_music.mp3'
+    main_scene = 'assets/main_scene_music.mp3'
 
 
 class Sound:

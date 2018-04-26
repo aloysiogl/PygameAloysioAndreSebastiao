@@ -20,10 +20,11 @@ class Meteor1(GameObject):
 
         self.wait = 0
 
-        self.vectx = randint(-3, 3)
-        self.vecty = randint(0, 3)
+        self.vectx = randint(0, 0)
+        self.vecty = randint(1, 5)
         self.radius = randint(10, 70)
-        self.transform.scale=0.04
+        self.transform.scale=0.05
+        self.transform.rotation = randint(0, 180)
 
     def start(self):
         self.add_collider(self.collider)

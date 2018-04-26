@@ -24,7 +24,7 @@ class Enemy1(GameObject):
         self.vectx = 1
         self.vecty = 0.5
         self.radius = randint(10, 70)
-        self.transform.scale=0.04
+        self.transform.scale=0.06
 
     def start(self):
         self.add_collider(self.collider)

@@ -21,9 +21,9 @@ class Meteor2(GameObject):
         self.wait = 0
 
         self.vectx = randint(-3, 3)
-        self.vecty = randint(0, 3)
+        self.vecty = randint(2, 3)
         self.radius = randint(10, 70)
-        self.transform.scale=0.04
+        self.transform.scale=0.06
 
     def start(self):
         self.add_collider(self.collider)

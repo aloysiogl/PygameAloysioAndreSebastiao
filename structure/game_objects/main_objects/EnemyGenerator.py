@@ -27,7 +27,7 @@ class EnemyGenerator(GameObject):
         pass
 
     def update(self):
-        a = randint(55, 510)
+        a = randint(320, 510)
         b = 0
         c = randint(55, 510)
         d = 0
@@ -39,29 +39,30 @@ class EnemyGenerator(GameObject):
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 20, b + 20))))
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 40, b + 40))))
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 60, b + 60))))
-            self.wait = Timer.get_current_time() + randint(1, 2) * 1.3
+
+            self.wait = Timer.get_current_time() + randint(1, 2) * 3
 
         if Timer.get_current_time()> 6:
             if self.wait2 < Timer.get_current_time():
                 SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c, d))))
                 SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c + 40, d + 40))))
                 SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c + 80, d + 80))))
-                self.wait2 = Timer.get_current_time() + randint(1, 2) * 1.3
+                self.wait2 = Timer.get_current_time() + randint(1, 2) * 3
 
 
         if Timer.get_current_time() > 10:
             if self.wait3 < Timer.get_current_time():
                 SceneManager.get_current_scene().add_game_object(Enemy3(Transform(Vector2(e, f))))
                 SceneManager.get_current_scene().add_game_object(Enemy3(Transform(Vector2(e + 50, f + 50))))
-                self.wait3 = Timer.get_current_time() + randint(1, 2) * 1.3
+                self.wait3 = Timer.get_current_time() + randint(1, 2) * 3
 
         if self.wait4 < Timer.get_current_time():
             SceneManager.get_current_scene().add_game_object(Meteor1(Transform(Vector2(randint(55, 510  ), b))))
-            self.wait4 = Timer.get_current_time() + randint(1, 2) * 1.3
+            self.wait4 = Timer.get_current_time() + randint(1, 2) * 3
 
         if self.wait5 < Timer.get_current_time():
             SceneManager.get_current_scene().add_game_object(Meteor2(Transform(Vector2(randint(55, 510), b))))
-            self.wait5 = Timer.get_current_time() + randint(1, 2) * 1.3
+            self.wait5 = Timer.get_current_time() + randint(1, 2) * 3
 
     def draw(self):
         pass

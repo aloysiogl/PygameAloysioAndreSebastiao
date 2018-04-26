@@ -2,6 +2,7 @@
 
 from frame import *
 from random import randint
+from structure.game_objects.main_objects.EnemyShot import  EnemyShot
 
 
 class Enemy1(GameObject):
@@ -57,6 +58,11 @@ class Enemy1(GameObject):
                 self.vectx = -self.vectx
                 self.vecty = -self.vecty
                 self.wait = Timer.get_current_time() + 0.05
+
+        if self.wait < Timer.get_current_time():
+            SceneManager.get_current_scene().add_game_object(
+                EnemyShot(Transform(Vector2(self.transform.position + Vector2(10, 0)), 0, 1, 0)))
+            self.wait = Timer.get_current_time() + randint(1, 2) * 1
 
     def draw(self):
         self.mesh3.render(self.transform)

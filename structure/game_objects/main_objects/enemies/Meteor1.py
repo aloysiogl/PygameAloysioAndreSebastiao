@@ -23,13 +23,16 @@ class Meteor1(GameObject):
         self.vectx = randint(0, 0)
         self.vecty = randint(1, 5)
         self.radius = randint(10, 70)
-        self.transform.scale=0.05
-        self.transform.rotation = randint(0, 180)
+        self.transform.scale= randint(3, 10) * 0.01
+
+        self.rotation_speed = randint(1, 10)
+        self.transform.rotation = randint (0, 180)
 
     def start(self):
         self.add_collider(self.collider)
 
     def update(self):
+        self.transform.rotation += self.rotation_speed * Timer.get_dt() * 25
         self.transform.position += Vector2(self.vectx, self.vecty)
 
         if self.transform.position.y - self.radius < 0:

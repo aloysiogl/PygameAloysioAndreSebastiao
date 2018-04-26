@@ -82,7 +82,6 @@ class Scene:
             if EventHandler.quit:
                 self.exit()
                 return "exit_game"
-            print(len(self.game_objects_list))
 
         self.exit()
 

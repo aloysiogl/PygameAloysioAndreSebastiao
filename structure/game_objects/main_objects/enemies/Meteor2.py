@@ -35,8 +35,8 @@ class Meteor2(GameObject):
         self.transform.rotation += self.rotation_speed * Timer.get_dt() * 25
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.destroy()
+        #if self.transform.position.y - self.radius < 0:
+        #    self.destroy()
 
         if self.transform.position.y + self.radius > 640:
             self.destroy()
@@ -53,7 +53,9 @@ class Meteor2(GameObject):
 
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
+                next(x for x in SceneManager.get_current_scene().game_objects_list if x.__class__.__name__ == "CurrentScore").add_score(30)
                 self.destroy()
+
             if x.__class__.__name__ == "Meteor2" and self.wait < Timer.get_current_time():
                 self.vectx = -self.vectx
                 self.vecty = -self.vecty

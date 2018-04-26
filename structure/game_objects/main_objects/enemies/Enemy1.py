@@ -32,8 +32,8 @@ class Enemy1(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.destroy()
+        #if self.transform.position.y - self.radius < 0:
+        #    self.destroy()
 
         if self.transform.position.y + self.radius > 640:
             self.destroy()
@@ -50,7 +50,9 @@ class Enemy1(GameObject):
 
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
+                next(x for x in SceneManager.get_current_scene().game_objects_list if x.__class__.__name__ == "CurrentScore").add_score(10)
                 self.destroy()
+
             if x.__class__.__name__ == "Enemy1" and self.wait < Timer.get_current_time():
                 self.vectx = -self.vectx
                 self.vecty = -self.vecty

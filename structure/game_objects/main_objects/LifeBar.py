@@ -9,14 +9,24 @@ class LifeBar(GameObject):
                                    Material(Color.red))
 
         self.player = player
+        self.transform.layer = 3
 
     def start(self):
         pass
 
     def update(self):
         for x in self.player.collider.collisions_list:
-            if x.__class__.__name__ == "Enemy1" or x.__class__.__name__ == "Enemy2" or x.__class__.__name__ == "Enemy3" or x.__class__.__name__ == "Meteor1" or x.__class__.__name__ == "Meteor2":
+            if x.__class__.__name__ == "Enemy1":
                 self.transform.position -=  Vector2(29, 0)
+            elif x.__class__.__name__ == "Enemy2":
+                self.transform.position -= Vector2(2*29, 0)
+            elif x.__class__.__name__ == "Enemy3":
+                self.transform.position -= Vector2(3*29, 0)
+            elif x.__class__.__name__ == "Meteor1":
+                self.transform.position -= Vector2(4*29, 0)
+            elif x.__class__.__name__ == "Meteor2":
+                self.transform.position -= Vector2(4*29, 0)
+
         if self.transform.position[0] < -290:
             self.transform.position = (0, 0)
 

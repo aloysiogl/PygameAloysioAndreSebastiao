@@ -41,7 +41,7 @@ class Enemy3(GameObject):
         if self.transform.position.y - self.radius < 0:
             self.destroy()
 
-        if self.transform.position.y + self.radius > 400:
+        if self.transform.position.y + self.radius > 640:
             self.destroy()
 
         if self.transform.position.x - self.radius < 0:

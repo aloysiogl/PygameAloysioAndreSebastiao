@@ -23,7 +23,7 @@ class Enemy1(GameObject):
 
         self.vectx = 1
         self.vecty = 0.5
-        self.radius = randint(10, 70)
+        self.radius = 20
         self.transform.scale=0.06
 
     def start(self):

@@ -8,7 +8,7 @@ class MenuText(GameObject):
     def __init__(self, vector):
         """
         The game name
-        :param : the starting position for the player
+        :param : the position for the text
         """
         super().__init__(Transform(vector, 0, scale=50))
 

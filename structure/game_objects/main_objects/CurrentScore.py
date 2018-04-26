@@ -23,6 +23,8 @@ class CurrentScore(GameObject):
 
     def update(self):
         self.mesh_points = TextMesh(str(self.real_score), Font.space_font, Material(Color.white))
+        SceneManager.score = self.real_score
+
 
     def draw(self):
         """

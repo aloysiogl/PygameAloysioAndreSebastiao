@@ -29,6 +29,7 @@ class LifeBar(GameObject):
 
         if self.transform.position[0] < -290:
             self.transform.position = (0, 0)
+            SceneManager.next_scene()
 
     def draw(self):
         self.mesh.render(self.transform)

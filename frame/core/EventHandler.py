@@ -10,6 +10,7 @@ class EventHandler:
     key_left = False
     key_right = False
     key_space = False
+    key_esc = False
 
     @classmethod
     def handle_events(cls, events_list):
@@ -45,6 +46,8 @@ class EventHandler:
             cls.key_right = True
         if current_event.key == pygame.K_SPACE:
             cls.key_space = True
+        if current_event.key == pygame.K_ESCAPE:
+            cls.key_esc = True
 
     @classmethod
     def __key_up(cls, current_event):
@@ -63,6 +66,8 @@ class EventHandler:
             cls.key_right = False
         if current_event.key == pygame.K_SPACE:
             cls.key_space = False
+        if current_event.key == pygame.K_ESCAPE:
+            cls.key_esc = False
 
     @classmethod
     def __quit(cls):

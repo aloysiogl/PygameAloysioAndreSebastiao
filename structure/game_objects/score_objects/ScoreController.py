@@ -36,7 +36,7 @@ class ScoreController(GameObject):
 
         # Sorting high scores
 
-        lines = sorted(lines, key=lambda x: x[1], reverse=True)
+        lines = sorted(lines, key=lambda x: int(x[1].strip('\n')), reverse=True)
 
         self.scores = lines
 
@@ -60,8 +60,8 @@ class ScoreController(GameObject):
 
             self.got_name = True
 
-        if self.got_name and EventHandler.key_space:
-            pass
+        if self.got_name and EventHandler.key_esc:
+            SceneManager.exit_game()
 
     def draw(self):
         for i in range(min(self.max_scores, len(self.scores))):
@@ -75,5 +75,5 @@ class ScoreController(GameObject):
                 Transform(Vector2(Vector2(100, 500)), 0, 20))
             Renderer.render_text_input(self.text_input, Vector2(350, 500))
         else:
-            TextMesh('Great! Press space beyond...', Font.space_font, Material(Color.white)).render(
+            TextMesh('Great! Press esc to quit..', Font.space_font, Material(Color.white)).render(
                 Transform(Vector2(Vector2(100, 500)), 0, 20))

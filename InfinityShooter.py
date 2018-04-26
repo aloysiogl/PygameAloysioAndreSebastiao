@@ -7,9 +7,9 @@ from structure.scenes.ScoreScene import get_score_scene
 
 # Adding the scene to the game
 
-SceneManager.add_scene(get_score_scene())
 SceneManager.add_scene(get_menu_scene())
 SceneManager.add_scene(main_scene)
+SceneManager.add_scene(get_score_scene())
 
 
 # Starting the game

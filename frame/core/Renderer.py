@@ -93,3 +93,11 @@ class Renderer:
         text2 = text.convert_alpha()
         text2.set_alpha(10)
         cls.__game_display.blit(text2, (transform.position.x, transform.position.y))
+
+    @classmethod
+    def render_text_input(cls, text_input, position):
+        """
+        Renders the text input
+        :param text_input: the text input element
+        """
+        cls.__game_display.blit(text_input.get_surface(), (position.x, position.y))

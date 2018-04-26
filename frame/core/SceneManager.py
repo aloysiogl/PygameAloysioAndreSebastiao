@@ -8,6 +8,7 @@ class SceneManager:
 
     scenes_list = []
     current_scene_index = 0
+    score = 0
 
     @classmethod
     def add_scene(cls, scene):

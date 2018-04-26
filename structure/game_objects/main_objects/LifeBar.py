@@ -26,6 +26,8 @@ class LifeBar(GameObject):
                 self.transform.position -= Vector2(4*29, 0)
             elif x.__class__.__name__ == "Meteor2":
                 self.transform.position -= Vector2(4*29, 0)
+            elif x.__class__.__name__ == "EnemyShot":
+                self.transform.position -= Vector2(2*29, 0)
 
         if self.transform.position[0] < -290:
             self.transform.position = (0, 0)

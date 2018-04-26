@@ -16,4 +16,4 @@ from structure.game_objects.background_animator.ReverseStarCreator import Revers
 
 player = Player(Vector2(300, 300))
 
-main_scene = Scene([BlackLayer(Vector2(0, 0)), player, EnemyGenerator(), ReverseStarCreator(), LifeBar(Vector2(0, 0), player), MainController() , BlackWrap(Vector2(0, 0)), CurrentScore(Vector2(320, 8))], Material(Color.black))
+main_scene = Scene([BlackLayer(Vector2(0, 0)), player, EnemyGenerator(), ReverseStarCreator(), LifeBar(Vector2(0, 0), player), MainController() , BlackWrap(Vector2(0, 0)), CurrentScore(Vector2(380, 8))], Material(Color.black))

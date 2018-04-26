@@ -28,11 +28,11 @@ class EnemyGenerator(GameObject):
 
     def update(self):
         a = randint(320, 510)
-        b = 0
+        b = 30
         c = randint(55, 510)
-        d = 0
+        d = 25
         e = randint(55, 510)
-        f = 0
+        f = 20
         if self.wait < Timer.get_current_time():
 
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a, b))))
@@ -57,7 +57,7 @@ class EnemyGenerator(GameObject):
                 self.wait3 = Timer.get_current_time() + randint(1, 2) * 3
 
         if self.wait4 < Timer.get_current_time():
-            SceneManager.get_current_scene().add_game_object(Meteor1(Transform(Vector2(randint(55, 510  ), b))))
+            SceneManager.get_current_scene().add_game_object(Meteor1(Transform(Vector2(randint(55, 510), b))))
             self.wait4 = Timer.get_current_time() + randint(1, 2) * 3
 
         if self.wait5 < Timer.get_current_time():

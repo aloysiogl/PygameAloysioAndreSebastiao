@@ -32,11 +32,11 @@ class Enemy1(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        #if self.transform.position.y - self.radius < 0:
-        #    self.vecty = -self.vecty
+        if self.transform.position.y - self.radius < 0:
+            self.destroy()
 
-        #if self.transform.position.y + self.radius > 640:
-        #     self.vecty = -self.vecty
+        if self.transform.position.y + self.radius > 640:
+            self.destroy()
 
         if self.transform.position.x - self.radius < 0:
             self.vectx = -self.vectx

@@ -27,8 +27,8 @@ class Enemy3(GameObject):
 
         self.wait = 0
 
-        self.vectx = randint(-3, 3)
-        self.vecty = randint(0, 3)
+        self.vectx = 0
+        self.vecty = randint(3, 4)
         self.radius = randint(10, 70)
         self.transform.scale=0.065
 
@@ -38,11 +38,11 @@ class Enemy3(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        #if self.transform.position.y - self.radius < 0:
-        #    self.vecty = -self.vecty
+        if self.transform.position.y - self.radius < 0:
+            self.destroy()
 
-        #if self.transform.position.y + self.radius > 640:
-        #    self.vecty = -self.vecty
+        if self.transform.position.y + self.radius > 400:
+            self.destroy()
 
         if self.transform.position.x - self.radius < 0:
             self.vectx = -self.vectx

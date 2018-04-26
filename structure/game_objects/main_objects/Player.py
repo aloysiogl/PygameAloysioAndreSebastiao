@@ -32,13 +32,11 @@ class Player(GameObject):
         # Player parameters
 
         self.transform.scale = 0.1
-        self.speed = 500
+        self.speed = 10
         self.shoot_delay = 0.2
         self.turret = "right"
 
-        self.texto = "sadasds"
-
-        self.font_mesh = TextMesh(self.texto, Font.space_font, Material(Color.black))
+        self.direction = Vector2(0, 0)
 
     def start(self):
         """
@@ -51,8 +49,6 @@ class Player(GameObject):
         """
         Running movement and shoot
         """
-
-        self.font_mesh.text = str(Timer.get_current_time())
 
         self.detect_movement()
 
@@ -74,13 +70,31 @@ class Player(GameObject):
         """
 
         if EventHandler.key_up:
-            self.transform.position -= Timer.get_dt() * self.speed * Vector2(0, 1)
-        if EventHandler.key_down and self.transform.position.y < Screen.height:
-            self.transform.position += Timer.get_dt() * self.speed * Vector2(0, 1)
-        if EventHandler.key_left:
-            self.transform.position -= Timer.get_dt() * self.speed * Vector2(1, 0)
-        if EventHandler.key_right:
-            self.transform.position += Timer.get_dt() * self.speed * Vector2(1, 0)
+            self.direction -= Vector2(0, 1)
+        if EventHandler.key_down and self.transform.position.y < Screen.height - 15:
+            self.direction += Vector2(0, 1)
+        if EventHandler.key_left and self.transform.position.x > 20:
+            self.direction -= Vector2(1, 0)
+        if EventHandler.key_right and self.transform.position.x < Screen.width - 20:
+            self.direction += Vector2(1, 0)
+
+        if self.direction.length() > 0:
+            self.direction.normalize()
+
+        if self.transform.position.y < 30:
+            self.direction.y = 0
+            self.transform.position.y = 30
+        if self.transform.position.y > Screen.height - 30:
+            self.direction.y = 0
+            self.transform.position.y = Screen.height - 30
+        if self.transform.position.x > Screen.width - 20:
+            self.direction.x = 0
+            self.transform.position.x = Screen.width - 20
+        if self.transform.position.x < 20:
+            self.direction.x = 0
+            self.transform.position.x = 20
+
+        self.transform.position += Timer.get_dt() * self.speed * self.direction
 
     def detect_shoot(self):
         """

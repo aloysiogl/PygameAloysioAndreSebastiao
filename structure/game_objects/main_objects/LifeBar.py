@@ -15,7 +15,7 @@ class LifeBar(GameObject):
 
     def update(self):
         if len(self.player.collider.collisions_list) > 0:
-            self.transform.position -= Timer.get_dt() * 50 * Vector2(1, 0)
+            self.transform.position -= Timer.get_dt() * 400 * Vector2(1, 0)
         if self.transform.position[0] < -290:
             self.transform.position = (0, 0)
 

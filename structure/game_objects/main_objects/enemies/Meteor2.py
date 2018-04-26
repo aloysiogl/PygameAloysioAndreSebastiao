@@ -6,12 +6,12 @@ from random import randint
 
 class Meteor2(GameObject):
 
-    def __init__(self, initial_pos):
+    def __init__(self, transform):
         """
         The Meteor is the obstacles that de Player have to avoid
         :param initial_pos: the position of the character
         """
-        super().__init__(Transform(initial_pos))
+        super().__init__(transform)
         self.mesh = PolygonalMesh([Vector2(0, -150), Vector2(200, -100),
                                    Vector2(0,400), Vector2(-400, 150), Vector2(-100,20)],
                                    Material(Color.white))
@@ -20,10 +20,10 @@ class Meteor2(GameObject):
 
         self.wait = 0
 
-        self.vectx = randint(-5, 5)
-        self.vecty = randint(-5, 5)
+        self.vectx = randint(-3, 3)
+        self.vecty = randint(0, 3)
         self.radius = randint(10, 70)
-        self.transform.scale=0.08
+        self.transform.scale=0.04
 
     def start(self):
         self.add_collider(self.collider)
@@ -31,11 +31,11 @@ class Meteor2(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.vecty = -self.vecty
+        # if self.transform.position.y - self.radius < 0:
+        #    self.vecty = -self.vecty
 
-        if self.transform.position.y + self.radius > 640:
-            self.vecty = -self.vecty
+        # if self.transform.position.y + self.radius > 640:
+        #    self.vecty = -self.vecty
 
         if self.transform.position.x - self.radius < 0:
             self.vectx = -self.vectx

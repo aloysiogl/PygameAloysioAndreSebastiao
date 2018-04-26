@@ -6,12 +6,12 @@ from random import randint
 
 class Enemy2(GameObject):
 
-    def __init__(self, initial_pos):
+    def __init__(self, transform):
         """
         The Enemy is the character that the Player have to destroy
         :param initial_pos: the position of the character
         """
-        super().__init__(Transform(initial_pos))
+        super().__init__(transform)
         self.mesh = PolygonalMesh([Vector2(0,540), Vector2(540,0), Vector2(-540, 0)], Material(Color.blue))
 
         self.mesh2 = PolygonalMesh([Vector2(0,380), Vector2(380,0), Vector2(-380,0)], Material(Color.medium_blue))
@@ -26,10 +26,10 @@ class Enemy2(GameObject):
 
         self.wait = 0
 
-        self.vectx = randint(-5, 5)
-        self.vecty = randint(-5, 5)
+        self.vectx = 1.5
+        self.vecty = 2
         self.radius = randint(10, 70)
-        self.transform.scale=0.08
+        self.transform.scale=0.04
 
     def start(self):
         self.add_collider(self.collider)
@@ -37,11 +37,11 @@ class Enemy2(GameObject):
     def update(self):
         self.transform.position += Vector2(self.vectx, self.vecty)
 
-        if self.transform.position.y - self.radius < 0:
-            self.vecty = -self.vecty
+        #if self.transform.position.y - self.radius < 0:
+        #    self.vecty = -self.vecty
 
-        if self.transform.position.y + self.radius > 640:
-            self.vecty = -self.vecty
+        #if self.transform.position.y + self.radius > 640:
+        #    self.vecty = -self.vecty
 
         if self.transform.position.x - self.radius < 0:
             self.vectx = -self.vectx

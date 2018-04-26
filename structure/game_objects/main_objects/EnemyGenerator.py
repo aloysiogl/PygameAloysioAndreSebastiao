@@ -27,7 +27,7 @@ class EnemyGenerator(GameObject):
         pass
 
     def update(self):
-        a = randint(320, 510)
+        a = randint(40, 600)
         b = -70
         c = randint(55, 510)
         d = -90
@@ -36,17 +36,18 @@ class EnemyGenerator(GameObject):
         if self.wait < Timer.get_current_time():
 
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a, b))))
-            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 20, b + 20))))
-            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 40, b + 40))))
+            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 30, b + 30))))
             SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 60, b + 60))))
-
-            self.wait = Timer.get_current_time() + randint(1, 2) * 3
+            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 90, b + 90))))
+            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 120, b + 120))))
+            SceneManager.get_current_scene().add_game_object(Enemy1(Transform(Vector2(a + 150, b + 150))))
+            self.wait = Timer.get_current_time() + randint(1, 2) * 5
 
         if Timer.get_current_time()> 6:
             if self.wait2 < Timer.get_current_time():
                 SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c, d))))
-                SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c + 40, d + 40))))
-                SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c + 80, d + 80))))
+                SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c + 40, d - 40))))
+                SceneManager.get_current_scene().add_game_object(Enemy2(Transform(Vector2(c - 40, d - 40))))
                 self.wait2 = Timer.get_current_time() + randint(1, 2) * 3
 
 

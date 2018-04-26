@@ -16,7 +16,7 @@ class LifeBar(GameObject):
     def update(self):
         for x in self.player.collider.collisions_list:
             if x.__class__.__name__ == "Enemy1" or x.__class__.__name__ == "Enemy2" or x.__class__.__name__ == "Enemy3" or x.__class__.__name__ == "Meteor1" or x.__class__.__name__ == "Meteor2":
-                self.transform.position -= Vector2(1, 0)
+                self.transform.position -=  Vector2(29, 0)
         if self.transform.position[0] < -290:
             self.transform.position = (0, 0)
 

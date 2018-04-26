@@ -50,6 +50,9 @@ class Enemy2(GameObject):
             self.vectx = -self.vectx
 
         for x in self.collider.collisions_list:
+            if x.__class__.__name__ == "Player":
+                self.destroy()
+
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
                 self.destroy()

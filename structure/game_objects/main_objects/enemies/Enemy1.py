@@ -48,7 +48,7 @@ class Enemy1(GameObject):
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
                 self.destroy()
-            if x.__class__.__name__ == "BasicEnemy" and self.wait < Timer.get_current_time():
+            if x.__class__.__name__ == "Enemy1" and self.wait < Timer.get_current_time():
                 self.vectx = -self.vectx
                 self.vecty = -self.vecty
                 self.wait = Timer.get_current_time() + 0.05

@@ -53,7 +53,9 @@ class Meteor2(GameObject):
 
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
+                next(x for x in SceneManager.get_current_scene().game_objects_list if x.__class__.__name__ == "CurrentScore").add_score(30)
                 self.destroy()
+
             if x.__class__.__name__ == "Meteor2" and self.wait < Timer.get_current_time():
                 self.vectx = -self.vectx
                 self.vecty = -self.vecty

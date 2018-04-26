@@ -51,7 +51,7 @@ class Enemy1(GameObject):
 
             if x.__class__.__name__ == "MainShot":
                 x.destroy()
-                next(x for x in SceneManager.get_current_scene().game_objects_list if x.__class__.__name__ == "CurrentScore").add_score(10)
+                next(x for x in SceneManager.get_current_scene().game_objects_list if x.__class__.__name__ == "CurrentScore").add_score(50)
                 self.destroy()
 
             if x.__class__.__name__ == "Enemy1" and self.wait < Timer.get_current_time():
@@ -59,10 +59,10 @@ class Enemy1(GameObject):
                 self.vecty = -self.vecty
                 self.wait = Timer.get_current_time() + 0.05
 
-        if self.wait < Timer.get_current_time():
+        if self.wait < Timer.get_current_time() and self.transform.position.y > 50:
             SceneManager.get_current_scene().add_game_object(
                 EnemyShot(Transform(Vector2(self.transform.position + Vector2(10, 0)), 0, 1, 0)))
-            self.wait = Timer.get_current_time() + randint(1, 2) * 1
+            self.wait = Timer.get_current_time() + randint(1, 2) * 3
 
     def draw(self):
         self.mesh3.render(self.transform)

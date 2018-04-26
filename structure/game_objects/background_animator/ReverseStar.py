@@ -20,7 +20,7 @@ class ReverseStar(GameObject):
 
         self.speed = randint(5, 20)
 
-        self.alpha = 255
+        self.alpha = 170
 
         self.factor = randint(1, 10)
 

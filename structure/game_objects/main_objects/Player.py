@@ -3,8 +3,7 @@
 from frame import *
 from structure.game_objects.main_objects.MainShot import MainShot
 from assets.GameSounds import Sound
-
-import pygame
+from frame.core.Representations import Screen
 
 class Player(GameObject):
 
@@ -76,7 +75,7 @@ class Player(GameObject):
 
         if EventHandler.key_up:
             self.transform.position -= Timer.get_dt() * self.speed * Vector2(0, 1)
-        if EventHandler.key_down:
+        if EventHandler.key_down and self.transform.position.y < Screen.height:
             self.transform.position += Timer.get_dt() * self.speed * Vector2(0, 1)
         if EventHandler.key_left:
             self.transform.position -= Timer.get_dt() * self.speed * Vector2(1, 0)

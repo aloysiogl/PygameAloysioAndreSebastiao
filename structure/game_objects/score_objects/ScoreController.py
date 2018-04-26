@@ -3,6 +3,7 @@
 from frame import *
 from assets import pygame_textinput
 from frame.core.Renderer import Renderer
+from structure.game_objects.score_objects.QuitText import QuitText
 
 import pygame
 
@@ -46,7 +47,7 @@ class ScoreController(GameObject):
         events = pygame.event.get()
         if self.text_input.update(events) and not self.got_name:
             # Updating scores
-            self.scores.append([self.text_input.get_text(), str(SceneManager.score)+'\n'])
+            self.scores.append([self.text_input.get_text().strip(" "), str(SceneManager.score)+'\n'])
             self.scores = sorted(self.scores, key=lambda x: int(x[1]), reverse=True)
 
             # Outputting scores to file
@@ -59,6 +60,8 @@ class ScoreController(GameObject):
             file.close()
 
             self.got_name = True
+
+            SceneManager.get_current_scene().add_game_object(QuitText(Vector2(340,500)))
 
         if self.got_name and EventHandler.key_esc:
             SceneManager.exit_game()
@@ -74,6 +77,3 @@ class ScoreController(GameObject):
             TextMesh('Type your name: ', Font.space_font, Material(Color.white)).render(
                 Transform(Vector2(Vector2(100, 500)), 0, 20))
             Renderer.render_text_input(self.text_input, Vector2(350, 500))
-        else:
-            TextMesh('Great! Press esc to quit..', Font.space_font, Material(Color.white)).render(
-                Transform(Vector2(Vector2(100, 500)), 0, 20))

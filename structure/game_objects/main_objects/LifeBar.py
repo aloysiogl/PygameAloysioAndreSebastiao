@@ -9,6 +9,7 @@ class LifeBar(GameObject):
                                    Material(Color.red))
 
         self.player = player
+        self.transform.layer = 3
 
     def start(self):
         pass

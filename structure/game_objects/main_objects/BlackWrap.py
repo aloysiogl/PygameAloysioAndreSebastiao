@@ -13,6 +13,7 @@ class BlackWrap(GameObject):
                                    Material(Color.white))
         self.mesh4 = PolygonalMesh([Vector2(0, 38), Vector2(300, 38), Vector2(300, 43), Vector2(0, 43)],
                                    Material(Color.white))
+        self.transform.layer = 3
 
     def start(self):
         pass

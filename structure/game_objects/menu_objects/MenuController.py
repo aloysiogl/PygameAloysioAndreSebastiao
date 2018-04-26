@@ -17,10 +17,11 @@ class MenuController(GameObject):
         Menu initial configurations
         """
 
-        SoundPlayer.play_music(Music.main_scene, -1)
+        SoundPlayer.play_music(Music.menu_scene, -1)
 
     def update(self):
         if EventHandler.key_space:
+            SoundPlayer.fade_out()
             SceneManager.next_scene()
 
     def draw(self):

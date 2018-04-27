@@ -10,6 +10,7 @@ class Color:
     medium_blue = (0, 0, 205)
     light_blue = (173, 216, 230)
     yellow = (247, 251, 0)
+    pink = (255, 20, 147)
 
 
 class Screen:

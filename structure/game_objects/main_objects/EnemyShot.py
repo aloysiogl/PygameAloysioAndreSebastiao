@@ -12,7 +12,7 @@ class EnemyShot(GameObject):
         """
         super().__init__(transform)
 
-        self.mesh = PolygonalMesh([Vector2(0, 0), Vector2(0, 15), Vector2(5, 15), Vector2(5, 0)], Material(Color.red))
+        self.mesh = PolygonalMesh([Vector2(0, 0), Vector2(0, 15), Vector2(5, 15), Vector2(5, 0)], Material(Color.pink))
 
         self.mesh.set_center_pivot()
 

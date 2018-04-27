@@ -12,7 +12,7 @@ class QuitText(GameObject):
         """
         super().__init__(Transform(vector, 0, scale=20))
 
-        self.mesh_text = TextMesh("Great! Press esc to quit..", Font.space_font, Material(Color.white))
+        self.mesh_text = TextMesh("Great! Press esc to quit...", Font.space_font, Material(Color.white))
 
         self.direction = True
 
@@ -42,7 +42,6 @@ class QuitText(GameObject):
             if self.alpha <= 40:
                 self.alpha = 40
                 self.direction = not self.direction
-        pass
 
     def draw(self):
         """
